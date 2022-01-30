@@ -16,7 +16,6 @@
         android:padding="25dp"
         android:text="@string/title"
         android:textSize="25sp"
-        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,6 +26,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Search fact check results"
+        android:textStyle="italic"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
