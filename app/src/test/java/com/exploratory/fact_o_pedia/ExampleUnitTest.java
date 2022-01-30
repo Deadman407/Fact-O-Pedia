@@ -1,4 +1,4 @@
-package com.example.fact_o_pedia;
+package com.exploratory.fact_o_pedia;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.fact_o_pedia;
+package com.exploratory.fact_o_pedia;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String Q = "com.example.fact_o_pedia.Q";
+    public static final String Q = "com.exploratory.fact_o_pedia.Q";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
