@@ -17,10 +17,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void search(View view) {
-
         Intent intent = new Intent(this, FactListActivity.class);
+
         EditText editText = findViewById(R.id.editText);
         String query = editText.getText().toString();
+
         intent.putExtra(Q, query);
         startActivity(intent);
     }
