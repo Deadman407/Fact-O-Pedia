@@ -15,8 +15,5 @@ public class FactListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String query = intent.getStringExtra(MainActivity.Q);
-
-        TextView textView = findViewById(R.id.queryText);
-        textView.setText(query);
     }
 }
