@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -16,11 +17,16 @@ import java.util.List;
 public class FactListActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     CustomAdaptor adaptor;
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fact_list);
+
+        dialog = new ProgressDialog(this);
+        dialog.setTitle("Fetching claims...");
+        dialog.show();
 
         Intent intent = getIntent();
         String query = intent.getStringExtra(MainActivity.Q);
@@ -33,6 +39,7 @@ public class FactListActivity extends AppCompatActivity {
         @Override
         public void onFetchData(List<Claims> claims, String message) {
             showFacts(claims);
+            dialog.dismiss();
             if (claims.isEmpty()){
                 Toast.makeText(FactListActivity.this, "No Data Found!", Toast.LENGTH_LONG).show();
             }
