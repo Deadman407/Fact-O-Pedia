@@ -10,6 +10,7 @@
     <color name="blue">#FF0E86D4</color>
     <color name="bgcolor">#FFFFFFFF</color>
     <color name="textcolor">#FF000000</color>
-    <color name="btncolor">#FF2E8BC0</color>
+    <color name="btncolor">#FF5cdb5c</color>
+    <color name="titlebgcolor">#FF2E8BC0</color>
     <color name="cardtextcolor">#FF000000</color>
 </resources>

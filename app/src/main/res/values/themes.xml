@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.FactOPedia" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/btncolor</item>
-        <item name="colorPrimaryVariant">@color/btncolor</item>
+        <item name="colorPrimary">@color/titlebgcolor</item>
+        <item name="colorPrimaryVariant">@color/titlebgcolor</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
