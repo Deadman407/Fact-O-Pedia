@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
     app:cardElevation="8dp"
     android:layout_margin="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -18,7 +19,6 @@
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:maxLines="3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </TextView>
@@ -26,8 +26,7 @@
         <TextView
             android:id="@+id/text_claimant"
             android:textSize="18sp"
-            android:textColor="@color/purple_500"
-            android:maxLines="1"
+            android:textColor="@color/black"
             android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -35,8 +34,7 @@
         <TextView
             android:id="@+id/claim_publisher"
             android:textSize="18sp"
-            android:textColor="@color/purple_500"
-            android:maxLines="1"
+            android:textColor="@color/blue"
             android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -44,8 +42,7 @@
         <TextView
             android:id="@+id/claim_rating"
             android:textSize="18sp"
-            android:textColor="@color/purple_500"
-            android:maxLines="1"
+            android:textColor="@color/blue"
             android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
