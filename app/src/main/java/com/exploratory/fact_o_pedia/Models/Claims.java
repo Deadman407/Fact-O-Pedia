@@ -1,8 +1,9 @@
 package com.exploratory.fact_o_pedia.Models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Claims {
+public class Claims implements Serializable {
     String text = "";
     String claimant = "";
     String claimDate = "";
@@ -39,7 +40,7 @@ public class Claims {
         this.claimDate = claimDate;
     }
 
-    public static class ClaimReview {
+    public static class ClaimReview implements Serializable{
         Publisher publisher = null;
         String url = "";
         String title = "";

@@ -1,6 +1,8 @@
 package com.exploratory.fact_o_pedia.Models;
 
-public class Publisher {
+import java.io.Serializable;
+
+public class Publisher implements Serializable {
     String name = "";
     String site = "";
 

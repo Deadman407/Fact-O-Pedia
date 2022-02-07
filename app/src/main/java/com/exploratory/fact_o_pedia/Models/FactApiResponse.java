@@ -1,8 +1,9 @@
 package com.exploratory.fact_o_pedia.Models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class FactApiResponse {
+public class FactApiResponse implements Serializable {
     List<Claims> claims;
 
     public List<Claims> getClaims() {

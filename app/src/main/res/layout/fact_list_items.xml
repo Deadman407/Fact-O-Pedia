@@ -18,7 +18,7 @@
             android:id="@+id/claim_title"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/cardtextcolor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </TextView>
@@ -26,7 +26,7 @@
         <TextView
             android:id="@+id/text_claimant"
             android:textSize="18sp"
-            android:textColor="@color/black"
+            android:textColor="@color/cardtextcolor"
             android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

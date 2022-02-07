@@ -2,6 +2,7 @@ package com.exploratory.fact_o_pedia;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -14,10 +15,12 @@ import java.util.List;
 public class CustomAdaptor extends RecyclerView.Adapter<CustomViewHolder> {
     private Context context;
     private List<Claims> claims;
+    private SelectListener listener;
 
-    public CustomAdaptor(Context context, List<Claims> claims) {
+    public CustomAdaptor(Context context, List<Claims> claims, SelectListener listener) {
         this.context = context;
         this.claims = claims;
+        this.listener = listener;
     }
 
     @NonNull
@@ -32,6 +35,13 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomViewHolder> {
         holder.text_claimant.setText(claims.get(position).getClaimant());
         holder.claim_publisher.setText(claims.get(position).getClaimReview().get(0).getPublisher().getName());
         holder.claim_rating.setText(claims.get(position).getClaimReview().get(0).getTextualRating());
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.OnClaimClicked(claims.get(position));
+            }
+        });
     }
 
     @Override

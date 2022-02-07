@@ -14,7 +14,7 @@ import com.exploratory.fact_o_pedia.Models.FactApiResponse;
 
 import java.util.List;
 
-public class FactListActivity extends AppCompatActivity {
+public class FactListActivity extends AppCompatActivity implements SelectListener{
     RecyclerView recyclerView;
     CustomAdaptor adaptor;
     ProgressDialog dialog;
@@ -55,7 +55,13 @@ public class FactListActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_main);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
-        adaptor = new CustomAdaptor(this, claims);
+        adaptor = new CustomAdaptor(this, claims, this);
         recyclerView.setAdapter(adaptor);
+    }
+
+    @Override
+    public void OnClaimClicked(Claims claims) {
+        startActivity(new Intent(FactListActivity.this, DetailsActivity.class)
+        .putExtra("data", claims));
     }
 }
