@@ -15,33 +15,74 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/claim_title"
+            android:id="@+id/text_claimant"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/cardtextcolor"
+            android:layout_marginTop="6dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
         </TextView>
 
         <TextView
-            android:id="@+id/text_claimant"
-            android:textSize="18sp"
+            android:id="@+id/text_title"
+            android:textSize="20sp"
             android:textColor="@color/cardtextcolor"
             android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </TextView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text"
+                android:textSize="20sp"
+                android:text="Rating: "
+                android:textColor="@color/cardtextcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:id="@+id/claim_rating"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </LinearLayout>
+
         <TextView
-            android:id="@+id/claim_publisher"
-            android:textSize="18sp"
+            android:id="@+id/claim_title"
+            android:textSize="16sp"
             android:textColor="@color/blue"
             android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </TextView>
+
         <TextView
-            android:id="@+id/claim_rating"
-            android:textSize="18sp"
+            android:id="@+id/claim_date"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:id="@+id/claim_publisher"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="end"
             android:textColor="@color/blue"
             android:layout_marginTop="6dp"
             android:layout_width="match_parent"

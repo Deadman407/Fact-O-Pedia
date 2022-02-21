@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public static final String Q = "com.exploratory.fact_o_pedia.Q";
@@ -23,8 +24,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FactListActivity.class);
 
         String query = editText.getText().toString();
-
-        intent.putExtra(Q, query);
-        startActivity(intent);
+        if(query.length() == 0) {
+            Toast.makeText(this,"Enter the query before search", Toast.LENGTH_LONG).show();
+        }
+        else{
+            intent.putExtra(Q, query);
+            startActivity(intent);
+        }
     }
 }

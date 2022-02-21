@@ -8,15 +8,17 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CustomViewHolder extends RecyclerView.ViewHolder {
-    TextView claim_title, text_claimant, claim_publisher, claim_rating;
+    TextView text_title, claim_title, text_claimant, claim_publisher, claim_rating, claim_date;
     CardView cardView;
     public CustomViewHolder(@NonNull View itemView) {
         super(itemView);
 
+        text_title = itemView.findViewById(R.id.text_title);
         claim_title = itemView.findViewById(R.id.claim_title);
         text_claimant = itemView.findViewById(R.id.text_claimant);
         claim_publisher = itemView.findViewById(R.id.claim_publisher);
         claim_rating = itemView.findViewById(R.id.claim_rating);
+        claim_date = itemView.findViewById(R.id.claim_date);
         cardView = itemView.findViewById(R.id.main_container);
     }
 }
