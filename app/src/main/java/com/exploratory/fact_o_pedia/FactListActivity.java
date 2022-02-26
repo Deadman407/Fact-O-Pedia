@@ -17,20 +17,44 @@ import com.exploratory.fact_o_pedia.Models.FactApiResponse;
 import java.util.List;
 
 public class FactListActivity extends AppCompatActivity implements SelectListener{
+    public static String q;
     RecyclerView recyclerView;
     CustomAdaptor adaptor;
     ProgressDialog dialog;
-    public boolean claimAvailable = true;
+    String query;
+    TextView textView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_fact_list);
+        dialog = new ProgressDialog(this);
+        dialog.setTitle("Fetching claims...");
+        dialog.show();
+
+        Intent intent = getIntent();
+        query = intent.getStringExtra(MainActivity.Q);
+
+        RequestManager manager = new RequestManager(this);
+        manager.getClaimsList(listener, query);
+    }
 
     private final OnFetchDataListener<FactApiResponse> listener = new OnFetchDataListener<FactApiResponse>() {
         @Override
         public void onFetchData(List<Claims> claims, String message) {
             if(claims == null){
-                claimAvailable = false;
-                Toast.makeText(FactListActivity.this, "No Data Found!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(FactListActivity.this, FactcheckRequest.class);
+                intent.putExtra("q", query);
+                startActivity(intent);
                 dialog.dismiss();
             }
             else{
+                String claim_text = "";
+                for(int i=0; i<claims.size(); i++){
+                    claim_text += claims.get(i).getText();
+                    claim_text += claims.get(i).getClaimReview().get(0).getTitle();
+                }
+                Log.d("claim_text", claim_text);
                 showFacts(claims);
                 dialog.dismiss();
             }
@@ -53,23 +77,6 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
     @Override
     public void OnClaimClicked(Claims claims) {
         startActivity(new Intent(FactListActivity.this, DetailsActivity.class)
-        .putExtra("data", claims));
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if(claimAvailable){
-            setContentView(R.layout.activity_fact_list);
-            dialog = new ProgressDialog(this);
-            dialog.setTitle("Fetching claims...");
-            dialog.show();
-
-            Intent intent = getIntent();
-            String query = intent.getStringExtra(MainActivity.Q);
-
-            RequestManager manager = new RequestManager(this);
-            manager.getClaimsList(listener, query);
-        }
+                .putExtra("data", claims));
     }
 }

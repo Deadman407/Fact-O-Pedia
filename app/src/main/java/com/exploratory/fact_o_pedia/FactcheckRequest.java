@@ -2,31 +2,29 @@ package com.exploratory.fact_o_pedia;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.exploratory.fact_o_pedia.Models.Claims;
-
-public class DetailsActivity extends AppCompatActivity {
-    Claims claims;
+public class FactcheckRequest extends AppCompatActivity {
     WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details);
-        getSupportActionBar().hide();
+        setContentView(R.layout.activity_factcheck_request);
 
-        claims = (Claims) getIntent().getSerializableExtra("data");
+        Bundle bundle = getIntent().getExtras();
+        String query = bundle.getString("q");
 
-        String claimURL = claims.getClaimReview().get(0).getUrl();
-
-        webView = findViewById(R.id.webview);
+        webView = findViewById(R.id.webview2);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl(claimURL);
+        webView.loadUrl("https://www.google.com/search?q=" + query);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
     }
