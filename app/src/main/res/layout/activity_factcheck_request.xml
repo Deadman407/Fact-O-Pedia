@@ -23,12 +23,12 @@
                 app:srcCompat="@drawable/empty_data_set" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/sendEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:backgroundTint="@color/googlebtn"
-                android:text="Request a FactCheck!"
+                android:text="Request a FactCheck!\nvia Gmail"
                 android:textColor="@color/black"
                 android:textStyle="italic" />
 
@@ -39,7 +39,7 @@
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
                 android:layout_gravity="center_horizontal"
-                android:text="-----OR-----" />
+                android:text="---OR---" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -48,7 +48,9 @@
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
                 android:layout_gravity="center_horizontal"
-                android:text="Scroll down to see what Google says about your query!"
+                android:text="Scroll down to see what Google says!"
+                android:textSize="16sp"
+                android:textColor="@color/black"
                 android:textStyle="italic"/>
 
             <WebView

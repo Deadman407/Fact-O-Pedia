@@ -22,7 +22,6 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
     CustomAdaptor adaptor;
     ProgressDialog dialog;
     String query;
-    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
