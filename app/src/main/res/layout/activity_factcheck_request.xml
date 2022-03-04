@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FactcheckRequest">
+    tools:context=".FactListActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,46 +17,62 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="500dp"
-                android:layout_height="400dp"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
                 android:layout_gravity="center_horizontal"
                 app:srcCompat="@drawable/empty_data_set" />
+
+            <TextView
+                android:id="@+id/no_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sad no result!"
+                android:textColor="@color/no_result"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your search did not match any claims.\n"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Suggestions:\n"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/suggestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Make sure all keywords are spelled correctly.\n• Try different keywords.\n• Try more general keywords.\n• Try fewer keywords."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/sendEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="@color/googlebtn"
-                android:text="Request a FactCheck!\nvia Gmail"
-                android:textColor="@color/black"
+                android:backgroundTint="@color/btncolor"
+                android:text="Request a FactCheck\nvia 📧!"
                 android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
-                android:layout_gravity="center_horizontal"
-                android:text="---OR---" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Scroll down to see what Google says!"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:textStyle="italic"/>
-
-            <WebView
-                android:id="@+id/webview2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </ScrollView>

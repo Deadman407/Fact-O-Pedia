@@ -37,7 +37,7 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomViewHolder> {
         holder.text_claimant.setText("Claim by "+(claims.get(position).getClaimant())+":");
         holder.claim_publisher.setText("- "+(claims.get(position).getClaimReview().get(0).getPublisher().getName()));
         holder.claim_rating.setText(claims.get(position).getClaimReview().get(0).getTextualRating());
-        holder.claim_date.setText(claims.get(position).getClaimDate().substring(0, 10));
+        holder.claim_date.setText(claims.get(position).getClaimDate());
 
         switch (claims.get(position).getClaimReview().get(0).getTextualRating().toLowerCase())
         {

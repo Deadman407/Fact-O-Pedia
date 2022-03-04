@@ -29,6 +29,7 @@
             android:id="@+id/text_title"
             android:textSize="20sp"
             android:textColor="@color/cardtextcolor"
+            android:maxLines="2"
             android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -64,6 +65,7 @@
             android:id="@+id/claim_title"
             android:textSize="16sp"
             android:textColor="@color/blue"
+            android:maxLines="2"
             android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
