@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText editText;
-    String item;
-    String[] items =  {"English", "Hindi", "All Languages"};
+    String item = "All Languages";
+    String[] items =  {"All Languages", "English", "Hindi"};
     AutoCompleteTextView autoCompleteTxt;
     ArrayAdapter<String> adapterItems;
 

@@ -19,6 +19,6 @@ public class CustomViewHolder extends RecyclerView.ViewHolder {
         claim_publisher = itemView.findViewById(R.id.claim_publisher);
         claim_rating = itemView.findViewById(R.id.claim_rating);
         claim_date = itemView.findViewById(R.id.claim_date);
-        cardView = itemView.findViewById(R.id.main_container);
+        cardView = itemView.findViewById(R.id.click);
     }
 }
