@@ -21,9 +21,9 @@ public class RequestManager {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-    public void getClaimsList(OnFetchDataListener listener, String query) {
+    public void getClaimsList(OnFetchDataListener listener, String query, String lang) {
         CallFactApi callFactApi = retrofit.create(CallFactApi.class);
-        Call<FactApiResponse> call = callFactApi.callFacts(context.getString(R.string.api_key), query);
+        Call<FactApiResponse> call = callFactApi.callFacts(context.getString(R.string.api_key), query, lang);
 
         try {
             call.enqueue(new Callback<FactApiResponse>() {
@@ -56,7 +56,8 @@ public class RequestManager {
         @GET("v1alpha1/claims:search")
         Call<FactApiResponse> callFacts(
                 @Query("key") String api_key,
-                @Query("query") String query
+                @Query("query") String query,
+                @Query("languageCode") String lang
         );
     }
 }

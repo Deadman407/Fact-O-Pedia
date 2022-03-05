@@ -7,11 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +27,8 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
     ProgressDialog dialog;
     String query;
     TextView textView;
-    TextView txtView;
+    String item;
+    String lang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +43,23 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
         dialog.show();
 
         Bundle bundle = getIntent().getExtras();
-        query = bundle.getString(MainActivity.Q);
+        query = bundle.getString("query");
+        item = bundle.getString("item");
+
+        if(item.equals("English")){
+            lang = "en-US";
+        }
+        else if(item.equals("Hindi")){
+            lang = "hi-IN";
+        }
+        else{
+            lang = "";
+        }
 
         textView.setText(query);
 
         RequestManager manager = new RequestManager(this);
-        manager.getClaimsList(listener, query);
+        manager.getClaimsList(listener, query, lang);
     }
 
     private void emptyDataSet() {
