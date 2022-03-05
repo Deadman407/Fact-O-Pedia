@@ -49,8 +49,7 @@
                 android:layout_gravity="center_horizontal"
                 android:backgroundTint="@color/btncolor"
                 android:text="Request a FactCheck\nvia Email"
-                android:textAllCaps="false"
-                android:textStyle="italic" />
+                android:textAllCaps="false" />
 
         </LinearLayout>
     </ScrollView>

@@ -94,9 +94,10 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/click"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="45dp"
             android:layout_margin="8dp"
+            android:layout_gravity="center_horizontal"
             app:cardCornerRadius="50dp"
             app:cardBackgroundColor="@color/lightgrey">
 
