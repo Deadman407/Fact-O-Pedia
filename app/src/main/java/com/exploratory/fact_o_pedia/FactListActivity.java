@@ -39,7 +39,7 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
         textView = findViewById(R.id.search_query);
 
         dialog = new ProgressDialog(this);
-        dialog.setTitle("Fetching claims...");
+        dialog.setTitle("Fetching fact-checks...");
         dialog.show();
 
         Bundle bundle = getIntent().getExtras();
