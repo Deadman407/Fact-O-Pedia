@@ -45,11 +45,22 @@
                 android:id="@+id/sendEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:layout_gravity="center_horizontal"
                 android:backgroundTint="@color/btncolor"
                 android:text="Request a fact-check\nvia Email"
                 android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="NOTE: Unlawful words are strictly prohibited and may be reported by the fact-checkers."
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
 
         </LinearLayout>
     </ScrollView>
