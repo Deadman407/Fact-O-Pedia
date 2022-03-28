@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.exploratory.fact_o_pedia.Models.Claims;
 import com.exploratory.fact_o_pedia.Models.FactApiResponse;
+import com.google.firebase.firestore.auth.User;
 
 import java.util.List;
 
@@ -29,12 +30,14 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
     TextView textView;
     String item;
     String lang;
+    String claim_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_fact_list);
+        getSupportActionBar().hide();
 
         textView = findViewById(R.id.search_query);
 
@@ -60,6 +63,15 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
 
         RequestManager manager = new RequestManager(this);
         manager.getClaimsList(listener, query, lang);
+    }
+
+    public void user(View view){
+        Intent intent = new Intent(FactListActivity.this, UserSection.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("claim_text", claim_text);
+        bundle.putString("search_query", query);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     private void emptyDataSet() {
@@ -104,7 +116,7 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
                 dialog.dismiss();
             }
             else{
-                String claim_text = "";
+                claim_text = "";
                 for(int i=0; i<claims.size(); i++){
                     claim_text += claims.get(i).getText();
                     claim_text += claims.get(i).getClaimReview().get(0).getTitle();

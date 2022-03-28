@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FactOPedia">
         <activity
+            android:name=".UserSection"
+            android:exported="false" />
+        <activity
             android:name=".DetailsActivity"
             android:exported="false" />
         <activity
@@ -19,13 +22,12 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/SplashScreen"
+            android:exported="true"
             android:noHistory="true"
-            android:exported="true">
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

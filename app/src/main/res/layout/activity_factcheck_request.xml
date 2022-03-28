@@ -29,7 +29,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="Sad no result!"
                 android:textColor="@color/no_result"
-                android:textSize="26sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -39,7 +39,7 @@
                 android:padding="30dp"
                 android:text="Your search did not match any claims.\n\nSuggestions:\n\n• Make sure all keywords are spelled correctly.\n• Try different keywords.\n• Try more general keywords.\n• Try fewer keywords."
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/sendEmail"
