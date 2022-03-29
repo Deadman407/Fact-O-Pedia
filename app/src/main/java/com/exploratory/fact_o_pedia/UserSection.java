@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,7 +32,6 @@ import java.util.List;
 import java.util.Map;
 
 public class UserSection extends AppCompatActivity {
-
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     private EditText name, comment;
@@ -44,6 +44,7 @@ public class UserSection extends AppCompatActivity {
     ArrayList<Comments> comments;
     FirebaseFirestore db;
     CommentAdapter adapter;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,10 @@ public class UserSection extends AppCompatActivity {
         recview = (RecyclerView) findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));
         comments = new ArrayList<>();
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Fetching comments...");
+        progressDialog.show();
 
         db = FirebaseFirestore.getInstance();
         db.collection("comments").get()
@@ -67,6 +72,7 @@ public class UserSection extends AppCompatActivity {
                         }
                         adapter = new CommentAdapter(comments);
                         recview.setAdapter(adapter);
+                        progressDialog.dismiss();
                     }
                 });
 
