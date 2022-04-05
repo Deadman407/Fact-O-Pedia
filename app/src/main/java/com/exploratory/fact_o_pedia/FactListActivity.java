@@ -65,15 +65,6 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
         manager.getClaimsList(listener, query, lang);
     }
 
-    public void user(View view){
-        Intent intent = new Intent(FactListActivity.this, UserSection.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("claim_text", claim_text);
-        bundle.putString("search_query", query);
-        intent.putExtras(bundle);
-        startActivity(intent);
-    }
-
     private void emptyDataSet() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_factcheck_request);
@@ -116,12 +107,6 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
                 dialog.dismiss();
             }
             else{
-                claim_text = "";
-                for(int i=0; i<claims.size(); i++){
-                    claim_text += claims.get(i).getText();
-                    claim_text += claims.get(i).getClaimReview().get(0).getTitle();
-                }
-                Log.d("claim_text", claim_text);
                 showFacts(claims);
                 dialog.dismiss();
             }
@@ -145,6 +130,18 @@ public class FactListActivity extends AppCompatActivity implements SelectListene
     public void OnClaimClicked(Claims claims) {
         Intent intent = new Intent(FactListActivity.this, DetailsActivity.class);
         intent.putExtra("data", claims);
+        startActivity(intent);
+    }
+
+    @Override
+    public void OnButtonClicked(Claims claims) {
+        claim_text = claims.getText();
+        Log.d("claim_text", claim_text);
+        Intent intent = new Intent(FactListActivity.this, UserSection.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("claim_text", claim_text);
+        bundle.putString("search_query", query);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }

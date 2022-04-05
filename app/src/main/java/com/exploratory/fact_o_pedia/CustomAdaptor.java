@@ -69,6 +69,13 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomViewHolder> {
                 listener.OnClaimClicked(claims.get(position));
             }
         });
+
+        holder.imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.OnButtonClicked(claims.get(position));
+            }
+        });
     }
 
     @Override

@@ -17,7 +17,7 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="350dp"
+                android:layout_width="300dp"
                 android:layout_height="300dp"
                 android:layout_gravity="center_horizontal"
                 app:srcCompat="@drawable/empty_data_set" />
@@ -29,14 +29,15 @@
                 android:layout_gravity="center_horizontal"
                 android:text="Sad no result!"
                 android:textColor="@color/no_result"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="30dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="24dp"
                 android:text="Your search did not match any claims.\n\nSuggestions:\n\n• Make sure all keywords are spelled correctly.\n• Try different keywords.\n• Try more general keywords.\n• Try fewer keywords."
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -48,6 +49,7 @@
                 android:layout_gravity="center_horizontal"
                 android:backgroundTint="@color/btncolor"
                 android:text="Request a fact-check\nvia Email"
+                android:textSize="12sp"
                 android:textAllCaps="false" />
 
             <TextView
@@ -55,11 +57,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
                 android:text="NOTE: Unlawful words are strictly prohibited and may be reported by the fact-checkers."
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"/>
 
         </LinearLayout>
