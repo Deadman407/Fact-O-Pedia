@@ -29,6 +29,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/blue"
+            android:maxLines="2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         </TextView>
